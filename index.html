@@ -7,7 +7,7 @@
   <meta name="description" content="Ayush Jaiswal — full-stack & AI developer and author of the psychological thriller 'Owed: The Debt of a Son'. Selected shipped work and writing." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet" />
   <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -81,7 +81,7 @@
       box-shadow: 0 1px 0 rgba(0,0,0,0.01);
     }
     .nav-logo {
-      font-family: var(--serif); font-weight: 600; font-size: 18px;
+      font-family: 'Playfair Display', var(--serif); font-weight: 700; font-size: 18px;
       letter-spacing: -.01em; text-decoration: none; color: var(--ink);
     }
     .nav-logo span { color: var(--accent); }
@@ -125,11 +125,11 @@
       letter-spacing: .14em; text-transform: uppercase; margin-bottom: 1.4rem;
     }
     .hero-name {
-      font-family: var(--serif); font-weight: 600;
-      font-size: clamp(3rem, 8.5vw, 6rem); line-height: .98; letter-spacing: -.03em;
+      font-family: 'Playfair Display', var(--serif); font-weight: 700;
+      font-size: clamp(3rem, 8.4vw, 5.6rem); line-height: 1.03; letter-spacing: -.02em;
       margin-bottom: 1.1rem;
     }
-    .hero-name em { font-style: italic; color: var(--accent); }
+    .hero-name em { font-style: italic; font-weight: 600; color: var(--accent); }
     .hero-title {
       font-size: clamp(1.05rem, 2.4vw, 1.4rem); color: var(--ink);
       font-weight: 400; margin-bottom: 1.3rem; max-width: 640px;
@@ -160,32 +160,24 @@
     }
     .book-stage { perspective: 1400px; display: flex; justify-content: center; }
     .book-cover {
-      position: relative; width: 290px; max-width: 100%; aspect-ratio: 2/3;
-      border-radius: 5px 8px 8px 5px; padding: 2.2rem 1.6rem;
-      display: flex; flex-direction: column; text-align: center; color: #2a241c;
-      background:
-        radial-gradient(120% 90% at 30% 10%, rgba(255,255,255,.5), transparent 60%),
-        linear-gradient(135deg, #e9dfca 0%, #ddceb0 55%, #d3c2a1 100%);
-      box-shadow: var(--shadow-lg);
-      border: 1px solid rgba(120,95,60,.28);
+      position: relative; width: 290px; max-width: 100%;
+      border-radius: 4px 7px 7px 4px; box-shadow: var(--shadow-lg);
       transform: rotateY(-16deg) rotateX(3deg);
       transition: transform .7s var(--ease), box-shadow .7s var(--ease);
     }
+    .book-cover img {
+      display: block; width: 100%; height: auto;
+      border-radius: 4px 7px 7px 4px; border: 1px solid rgba(120,95,60,.25);
+    }
     .book-cover::before { /* spine shade */
-      content: ''; position: absolute; inset: 0 auto 0 0; width: 14px; border-radius: 5px 0 0 5px;
-      background: linear-gradient(90deg, rgba(90,68,40,.30), rgba(90,68,40,0)); pointer-events: none;
+      content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 13px; border-radius: 4px 0 0 4px;
+      background: linear-gradient(90deg, rgba(60,42,20,.34), rgba(60,42,20,0)); z-index: 2; pointer-events: none;
     }
     .book-cover::after { /* page edge */
-      content: ''; position: absolute; top: 3px; bottom: 3px; right: -6px; width: 6px; border-radius: 0 3px 3px 0;
-      background: repeating-linear-gradient(90deg, #efe7d6, #d8cbb0 2px); box-shadow: 1px 0 3px rgba(0,0,0,.15);
+      content: ''; position: absolute; top: 4px; bottom: 4px; right: -5px; width: 5px; border-radius: 0 3px 3px 0;
+      background: repeating-linear-gradient(90deg, #efe7d6, #d8cbb0 2px); box-shadow: 1px 0 3px rgba(0,0,0,.15); z-index: 0;
     }
     .book-stage:hover .book-cover { transform: rotateY(-6deg) rotateX(1deg) translateY(-6px); box-shadow: var(--shadow-lg), 0 40px 60px -30px rgba(0,0,0,.4); }
-    .bc-top { font-family: var(--mono); font-size: 9px; letter-spacing: .28em; color: #7a6543; margin-bottom: auto; }
-    .bc-title { font-family: var(--serif); font-weight: 700; font-size: 2.15rem; line-height: .95; letter-spacing: .01em; color: #26201a; }
-    .bc-sub { font-family: var(--serif); font-weight: 600; font-size: .95rem; letter-spacing: .18em; text-transform: uppercase; margin-top: .5rem; color: #3a3026; }
-    .bc-tag { font-family: var(--serif); font-style: italic; font-size: .8rem; color: #5c4f3d; margin-top: 1rem; }
-    .bc-rule { width: 46px; height: 1px; background: #8a6f49; margin: 1.4rem auto; }
-    .bc-author { font-family: var(--mono); font-size: 11px; letter-spacing: .2em; color: #4a3d2c; margin-top: auto; text-transform: uppercase; }
 
     .book-copy .eyebrow {
       font-family: var(--mono); font-size: 11px; color: var(--accent);
@@ -376,12 +368,7 @@
   <div class="book-inner">
     <div class="book-stage reveal drop">
       <div class="book-cover">
-        <div class="bc-top">A PSYCHOLOGICAL THRILLER</div>
-        <div class="bc-title">OWED</div>
-        <div class="bc-sub">The Debt of a Son</div>
-        <div class="bc-tag">What a father breaks, a son must carry.</div>
-        <div class="bc-rule"></div>
-        <div class="bc-author">Ayush Jaiswal</div>
+        <img src="owed-cover.png" width="264" height="424" alt="Cover of the novel Owed: The Debt of a Son by Ayush Jaiswal" />
       </div>
     </div>
     <div class="book-copy">
